@@ -3,6 +3,9 @@
         var animatePoints = function() {
  
             var points = document.getElementsByClassName('point');
+          
+        
+          
  
             var revealFirstPoint = function() {
                 points[0].style.opacity = 1;
@@ -29,4 +32,5 @@
                  revealThirdPoint();
  
              };
-            
+                 animatePoints();
+}
