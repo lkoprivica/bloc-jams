@@ -29,6 +29,22 @@ var albumPicasso = {
      ]
  };
 
+ // Create a third album object 
+ var albumJams = {
+      title: 'GreatListens',
+      artist:'John Smith',
+      label: 'Jam Records',
+      year: '1985',
+      albumArtUrl: 'assets/images.album_covers/15.png',
+      songs: [
+        { title: 'Great Tunes', duration: '2:01'},
+        { title: 'Listen Up', duration: '3:00'},
+        { title: 'Drummer', duraction: '1:38;'},
+        { title: 'Guitar Solo', duration: '2:20'},
+        { title: 'Lets Jam', duration: '3:02'}
+      ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -41,15 +57,15 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
-var setCurrentAlbum = function(album) {
-     // #1
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
  
-     // #2
+
+var setCurrentAlbum = function(album) {
+     
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -66,4 +82,18 @@ var setCurrentAlbum = function(album) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
- };
+ 
+     var albums =[albumPicasso, albumMarconi, albumJams];
+     var index = 1;
+
+   albumImage.addEventListener("click", function(event)){
+                            
+      setCurrentAlbum(albums[index]);
+      index++;
+
+      if(index == albums.length){
+         index = 0;
+      }
+                            
+  }};
+};
