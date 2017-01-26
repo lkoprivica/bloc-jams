@@ -70,6 +70,15 @@ var findParentByClassName = function(element, targetClass){
     while(currentParent.className != targetClass && currentParent.className !== null){
         currentParent = currentParent.parentElement;
     }
+    //assignment checkpoint 13 
+    else if{
+    (currentParent == null)
+      console.log("No Parent Found")
+    }
+    else {
+    (currentParent.className == null)
+      console.log("No parent found with that class name")
+    }
     return currentParent;
   }
 };
