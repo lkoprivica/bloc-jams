@@ -1,4 +1,5 @@
-var collectionItemTemplate =
+var buildCollectionItemTemplate = function() {
+     var template =
      '<div class="collection-album-container column fourth">'
    + '  <img src="assets/images/album_covers/01.png"/>'
    + '  <div class="collection-album-info caption">'
@@ -13,6 +14,9 @@ var collectionItemTemplate =
    + '  </div>'
    + '</div>'
    ;
+  
+       return $(template);
+ };
 
 window.onload = function() {
      // #1
