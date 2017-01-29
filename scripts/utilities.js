@@ -1,7 +1,7 @@
-var forEach = function(){
+function forEach(array, callback){
   
-  for(var i = 0; i <points.length; i++){
-    return points[i];
+  for(var i = 0; i < array.length; i++){
+    callback(array[i]);
     
     
   }
