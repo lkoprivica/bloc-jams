@@ -1,3 +1,22 @@
+//assignment from checkpoint 19
+//create a function called setSong that takes one arg.
+
+var setSong = function(songNumber){
+  currentlyPlayingSongNumber = parseInt(songNumber); 
+  currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
+  
+  };
+
+//assignment from checkpoint 19 continued
+//create a function called getSongNumberCell
+
+var getSongNumberCell = function(number){
+  return $('.song-item-number[data-song-number="' + number + '"]');
+  
+};
+
+
+
 
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
@@ -17,13 +36,12 @@ var createSongRow = function(songNumber, songName, songLength) {
        var songItem = $(this).attr('data-song-number');  
     
        if (currentlyPlayingSongNumber !== null) {
-		var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
+		var currentlyPlayingCell = getSongNUmberCell(currentPlayingSongNumver);
 		currentlyPlayingCell.html(currentlyPlayingSongNumber);
 	}
 	 if (currentlyPlayingSongNumber !== songNumber) {
         $(this).html(pauseButtonTemplate);
-        currentlyPlayingSongNumber = songNumber;
-        currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
+        setSong(songNumber);
         updatePlayerBarSong();
     } else if (currentlyPlayingSongNumber === songNumber) {
         $(this).html(playButtonTemplate);
