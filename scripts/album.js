@@ -1,3 +1,24 @@
+//assignment checkpoint 20 
+
+var togglePlayFromPlayerBar = function(){
+  
+  if(currentlyPlayingSong.pause() && ('.player-Bar.play-pause'.click()){
+    
+    getSongNumberCell.pause();
+    ('.player-Bar'.html('.play-pause');
+    currentlyPlayingSong.play();
+  
+}
+  if(currentlyPlayingsong.play() && ('.play-pause'.click()){
+    
+    getSongNumberCell.play();
+    ('.playerBar'.html('.play-pause');
+    currentlyPlayingSong.pause();
+    
+     }
+      
+}
+
 //assignment from checkpoint 19
 //create a function called setSong that takes one arg.
 
@@ -226,11 +247,15 @@ var playerBarPauseButton = '<span class="ion-pause"></span>';
  var currentVolume = 80;
  var $previousButton = $('.main-controls .previous');
  var $nextButton = $('.main-controls .next');
+ // assignment checkpoint 20
+ var $playPauseSongBar = $('.main-controls .play-pause');
 
  
  $(document).ready(function() {
      setCurrentAlbum(albumMarconi);
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
+     // assignment checkpoint 20
+     $playPauseSongBar.click(togglePlayFromPlayerBar());
  
  });
