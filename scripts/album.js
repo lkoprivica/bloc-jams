@@ -103,7 +103,8 @@ var clickHandler = function() {
             currentSoundFile.play();
             updateSeekBarWhileSongPlays();
             currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
-            setTotalTimeInPlayerBar(currentSoundFile.getDuration());
+            
+            setTotalTimeInPlayerBar(Buzz.toTimer(curr entSoundFile.getDuration()));
           
            var $volumeFill = $('.volume .fill');
            var $volumeThumb = $('.volume .thumb');
