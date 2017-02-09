@@ -67,13 +67,17 @@ var clickHandler = function() {
             updateSeekBarWhileSongPlays();
             currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
             
+<<<<<<< HEAD
            var $volumeFill = $('.volume .fill');
+=======
+            var $volumeFill = $('.volume .fill');
+>>>>>>> checkpoint-21-seekbars
            var $volumeThumb = $('.volume .thumb');
            $volumeFill.width(currentVolume + '%');
            $volumeThumb.css({left: currentVolume + '%'});
            
             $(this).html(pauseButtonTemplate);
-            updatePalyerBarSong();
+            updatePlayerBarSong();
             
         } else if (currentlyPlayingSongNumber === songNumber) {
             $(this).html(playButtonTemplate);
@@ -298,7 +302,9 @@ var previousSong = function() {
     $lastSongNumberCell.html(lastSongNumber);
     
 };
-  
+//Attemptin to correct template console error. 
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 var playerBarPlayButton = '<span class="ion-play"></span>';
 var playerBarPauseButton = '<span class="ion-pause"></span>';
 
