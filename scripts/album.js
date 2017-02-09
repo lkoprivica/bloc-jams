@@ -67,11 +67,11 @@ var clickHandler = function() {
             updateSeekBarWhileSongPlays();
             currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
             
-<<<<<<< HEAD
+
            var $volumeFill = $('.volume .fill');
-=======
-            var $volumeFill = $('.volume .fill');
->>>>>>> checkpoint-21-seekbars
+
+           var $volumeFill = $('.volume .fill');
+
            var $volumeThumb = $('.volume .thumb');
            $volumeFill.width(currentVolume + '%');
            $volumeThumb.css({left: currentVolume + '%'});
