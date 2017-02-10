@@ -98,14 +98,14 @@ var clickHandler = function() {
            currentlyPlayingCell.html(currentlyPlayingSongNumber);
         }
         
-        if (currentlyPlayingSongNumber !== songNumber) {
+        else if (currentlyPlayingSongNumber !== songNumber) {
             setSong(songNumber);
             currentSoundFile.play();
             updateSeekBarWhileSongPlays();
             currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
             
             setTotalTimeInPlayerBar(Buzz.toTimer(curr entSoundFile.getDuration()));
-          
+  
            var $volumeFill = $('.volume .fill');
            var $volumeThumb = $('.volume .thumb');
            $volumeFill.width(currentVolume + '%');
