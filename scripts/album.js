@@ -347,6 +347,9 @@ var previousSong = function() {
     
 };
   
+
+
+ 
  $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
      setupSeekBars();
