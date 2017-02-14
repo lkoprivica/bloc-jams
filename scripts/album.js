@@ -85,6 +85,7 @@ var createSongRow = function(songNumber, songName, songLength) {
       ;
  
      var $row = $(template);
+    
      
 var clickHandler = function() {
      
@@ -92,7 +93,7 @@ var clickHandler = function() {
   
       if (currentlyPlayingSongNumber !== null) {
             
-          var currentlyPlayingCell = currentVolume; getSongNumberCell(currentlyPlayingSongNumber);
+          var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
             
            currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
            currentlyPlayingCell.html(currentlyPlayingSongNumber);
@@ -101,6 +102,7 @@ var clickHandler = function() {
         if (currentlyPlayingSongNumber !== songNumber) {
             setSong(songNumber);
             currentSoundFile.play();
+            $(this).html(pauseButtonTemplate);
             updateSeekBarWhileSongPlays();
             currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
             
@@ -119,8 +121,8 @@ var clickHandler = function() {
             $('.main-controls .play-pause').html(playerBarPlayButton);
             currentlyPlayingSongNumber = null;
             currentSongFromAlbum = null;
-        }
-         else if (currentSoundFile.isPaused()) {
+        
+            if (currentSoundFile.isPaused()) {
               $(this).html(playerBarPlayButton);
               $('.main-controls .play-pause').html(playerBarPauseButton);
               console.log('isPaused')
@@ -132,8 +134,7 @@ var clickHandler = function() {
               $('.main-controls .play-pause').html(playerBarPlayButton);
               currentSoundFile.pause();   
        }
-        
-        
+              
 };
     
    var onHover = function(event) {
@@ -252,7 +253,7 @@ var updateSeekPercentage = function($seekBar, seekBarFillRatio) {
             updateSeekPercentage($seekBar, seekBarFillRatio);
          });
  
-         $(document).bind('mouseup.thumb', function() {
+             $(document).bind('mouseup.thumb', function() {
              $(document).unbind('mousemove.thumb');
              $(document).unbind('mouseup.thumb');
          });
