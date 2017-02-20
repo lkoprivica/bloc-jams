@@ -1,6 +1,7 @@
 var playButtonTemplate = '<span class="ion-play"></span>';
 var pauseButtonTemplate = '<span class="ion-pause"></span>';
 
+
 // Store state of playing songs
 var currentlyPlayingSong = null;
 var currentAlbum = null;
@@ -77,8 +78,7 @@ var getSongNumberCell = function(number) {
 };
 
 var createSongRow = function(songNumber, songName, songLength) {
-    var template =
-        '<tr class="album-view-song-item">' +
+    var template = '<tr class="album-view-song-item">' +
         '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>' +
         '  <td class="song-item-title">' + songName + '</td>' +
         '  <td class="song-item-duration">' + songLength + '</td>' +
@@ -126,7 +126,7 @@ var clickHandler = function(e) {
     }
   
   var $currentTarget = $(e.currentTarget);
-  debugger;
+  
   if($currentTarget.hasClass('ion-pause') && currentSoundFile){
     currentSoundFile.pause();
     $(this).parent().html(playButtonTemplate);
@@ -368,5 +368,5 @@ $(document).ready(function() {
     $nextButton.click(nextSong);
     $('.album-view-song-list').on('click', '.song-item-number', clickHandler);
     $('.main-controls').on('click', '.ion-play, .ion-pause', clickHandler);
-
+    
 });
